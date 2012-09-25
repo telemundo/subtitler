@@ -8,12 +8,17 @@
 
 #import <Cocoa/Cocoa.h>
 
+
 @interface SubtitlerAppDelegate : NSObject <NSApplicationDelegate> {
     NSWindow *window;
+    NSTask *task;
+    NSMutableArray *movies;
 }
 
 @property (assign) IBOutlet NSWindow *window;
 
 - (void)application:(NSApplication *)sender openFiles:(NSArray *) files;
+
+- (IBAction)run:(id)sender;
 
 @end
