@@ -9,18 +9,16 @@
 		<dict>
 			<key>CFBundleTypeExtensions</key>
 			<array>
-				<string>srt</string>
+				<string>mpg</string>
 			</array>
 			<key>CFBundleTypeName</key>
-			<string>Subtitle</string>
+			<string>MPEG-2</string>
 			<key>CFBundleTypeRole</key>
 			<string>Viewer</string>
 			<key>LSTypeIsPackage</key>
 			<false/>
-			<key>NSDocumentClass</key>
-			<string>Subtitle</string>
 			<key>NSPersistentStoreTypeKey</key>
-			<string>XML</string>
+			<string>SQLite</string>
 		</dict>
 	</array>
 	<key>CFBundleExecutable</key>
@@ -29,16 +27,18 @@
 	<string>app.icns</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
+	<key>NSHumanReadableCopyright</key>
+	<string>Telemundo</string>
 	<key>CFBundleIdentifier</key>
 	<string>com.telemundo.${PRODUCT_NAME:rfc1034identifier}</string>
 	<key>CFBundleName</key>
 	<string>${PRODUCT_NAME}</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
-	<key>CFBundleSignature</key>
-	<string>????</string>
 	<key>CFBundleShortVersionString</key>
 	<string>0.1.0</string>
+	<key>CFBundleSignature</key>
+	<string>????</string>
 	<key>CFBundleVersion</key>
 	<string>0.1.0</string>
 	<key>LSMinimumSystemVersion</key>
