@@ -12,7 +12,7 @@
 		</object>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
-			<integer value="371"/>
+			<integer value="546"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -251,9 +251,9 @@
 												<bool key="EncodedWithXMLCoder">YES</bool>
 												<object class="NSTableColumn" id="144101625">
 													<string key="NSIdentifier">path</string>
-													<double key="NSWidth">766</double>
-													<double key="NSMinWidth">40</double>
-													<double key="NSMaxWidth">800</double>
+													<double key="NSWidth">483</double>
+													<double key="NSMinWidth">200</double>
+													<double key="NSMaxWidth">1000</double>
 													<object class="NSTableHeaderCell" key="NSHeaderCell">
 														<int key="NSCellFlags">75628096</int>
 														<int key="NSCellFlags2">2048</int>
@@ -299,19 +299,19 @@
 															<reference key="NSColor" ref="849725980"/>
 														</object>
 													</object>
-													<int key="NSResizingMask">1</int>
+													<int key="NSResizingMask">3</int>
 													<bool key="NSIsResizeable">YES</bool>
 													<reference key="NSTableView" ref="930918909"/>
 												</object>
 												<object class="NSTableColumn" id="770084848">
-													<string key="NSIdentifier">progress</string>
-													<double key="NSWidth">200</double>
-													<double key="NSMinWidth">10</double>
-													<double key="NSMaxWidth">200</double>
+													<string key="NSIdentifier">status</string>
+													<double key="NSWidth">483</double>
+													<double key="NSMinWidth">200</double>
+													<double key="NSMaxWidth">1000</double>
 													<object class="NSTableHeaderCell" key="NSHeaderCell">
 														<int key="NSCellFlags">75628096</int>
 														<int key="NSCellFlags2">2048</int>
-														<string key="NSContents">Progress</string>
+														<string key="NSContents">Status</string>
 														<reference key="NSSupport" ref="26"/>
 														<object class="NSColor" key="NSBackgroundColor">
 															<int key="NSColorSpace">6</int>
@@ -333,7 +333,7 @@
 														<reference key="NSBackgroundColor" ref="45703923"/>
 														<reference key="NSTextColor" ref="559446855"/>
 													</object>
-													<int key="NSResizingMask">1</int>
+													<int key="NSResizingMask">3</int>
 													<bool key="NSIsResizeable">YES</bool>
 													<reference key="NSTableView" ref="930918909"/>
 												</object>
@@ -351,7 +351,7 @@
 												</object>
 											</object>
 											<double key="NSRowHeight">17</double>
-											<int key="NSTvFlags">331382784</int>
+											<int key="NSTvFlags">1405124608</int>
 											<reference key="NSDelegate"/>
 											<reference key="NSDataSource"/>
 											<int key="NSGridStyleMask">1</int>
@@ -387,7 +387,7 @@
 									<int key="NSsFlags">1</int>
 									<reference key="NSTarget" ref="869761637"/>
 									<string key="NSAction">_doScroller:</string>
-									<double key="NSPercent">0.99897225077081198</double>
+									<double key="NSPercent">0.9161168708765316</double>
 								</object>
 								<object class="NSClipView" id="926954504">
 									<reference key="NSNextResponder" ref="869761637"/>
@@ -492,12 +492,28 @@
 					<int key="connectionID">566</int>
 				</object>
 				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">dataSource</string>
+						<reference key="source" ref="930918909"/>
+						<reference key="destination" ref="976324537"/>
+					</object>
+					<int key="connectionID">568</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">delegate</string>
+						<reference key="source" ref="930918909"/>
+						<reference key="destination" ref="976324537"/>
+					</object>
+					<int key="connectionID">569</int>
+				</object>
+				<object class="IBConnectionRecord">
 					<object class="IBActionConnection" key="connection">
 						<string key="label">start:</string>
 						<reference key="source" ref="976324537"/>
 						<reference key="destination" ref="178303876"/>
 					</object>
-					<int key="connectionID">567</int>
+					<int key="connectionID">570</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -877,7 +893,7 @@
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">567</int>
+			<int key="maxID">570</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">

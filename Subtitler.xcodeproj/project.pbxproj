@@ -13,7 +13,7 @@
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 		D9DC0FF1161139E90076D42C /* app.icns in Resources */ = {isa = PBXBuildFile; fileRef = D9DC0FF0161139E90076D42C /* app.icns */; };
-		D9DC1024161144670076D42C /* FileEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = D9DC1023161144670076D42C /* FileEntity.m */; };
+		D9DC1024161144670076D42C /* FileOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = D9DC1023161144670076D42C /* FileOperation.m */; };
 		D9DC105716114C7D0076D42C /* ccextractor in Resources */ = {isa = PBXBuildFile; fileRef = D9DC105616114C7D0076D42C /* ccextractor */; };
 /* End PBXBuildFile section */
 
@@ -31,8 +31,8 @@
 		8D1107310486CEB800E47090 /* Subtitler-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Subtitler-Info.plist"; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* Subtitler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Subtitler.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9DC0FF0161139E90076D42C /* app.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = app.icns; sourceTree = "<group>"; };
-		D9DC1022161144670076D42C /* FileEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileEntity.h; sourceTree = "<group>"; };
-		D9DC1023161144670076D42C /* FileEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileEntity.m; sourceTree = "<group>"; };
+		D9DC1022161144670076D42C /* FileOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileOperation.h; sourceTree = "<group>"; };
+		D9DC1023161144670076D42C /* FileOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileOperation.m; sourceTree = "<group>"; };
 		D9DC105616114C7D0076D42C /* ccextractor */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = ccextractor; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -145,8 +145,8 @@
 		D9DC1021161144430076D42C /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				D9DC1022161144670076D42C /* FileEntity.h */,
-				D9DC1023161144670076D42C /* FileEntity.m */,
+				D9DC1022161144670076D42C /* FileOperation.h */,
+				D9DC1023161144670076D42C /* FileOperation.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -220,7 +220,7 @@
 			files = (
 				8D11072D0486CEB800E47090 /* main.m in Sources */,
 				256AC3DA0F4B6AC300CF3369 /* AppController.m in Sources */,
-				D9DC1024161144670076D42C /* FileEntity.m in Sources */,
+				D9DC1024161144670076D42C /* FileOperation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
