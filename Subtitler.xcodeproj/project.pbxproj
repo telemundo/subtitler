@@ -12,6 +12,8 @@
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
+		D95B1FFC16163179006A8377 /* Python.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D95B1FFB16163179006A8377 /* Python.framework */; };
+		D95B2009161631E8006A8377 /* parser.py in Resources */ = {isa = PBXBuildFile; fileRef = D95B2008161631E8006A8377 /* parser.py */; };
 		D9DC0FF1161139E90076D42C /* app.icns in Resources */ = {isa = PBXBuildFile; fileRef = D9DC0FF0161139E90076D42C /* app.icns */; };
 		D9DC1024161144670076D42C /* FileOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = D9DC1023161144670076D42C /* FileOperation.m */; };
 		D9DC105716114C7D0076D42C /* ccextractor in Resources */ = {isa = PBXBuildFile; fileRef = D9DC105616114C7D0076D42C /* ccextractor */; };
@@ -30,6 +32,8 @@
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		8D1107310486CEB800E47090 /* Subtitler-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Subtitler-Info.plist"; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* Subtitler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Subtitler.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D95B1FFB16163179006A8377 /* Python.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Python.framework; path = System/Library/Frameworks/Python.framework; sourceTree = SDKROOT; };
+		D95B2008161631E8006A8377 /* parser.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = parser.py; sourceTree = "<group>"; };
 		D9DC0FF0161139E90076D42C /* app.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = app.icns; sourceTree = "<group>"; };
 		D9DC1022161144670076D42C /* FileOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileOperation.h; sourceTree = "<group>"; };
 		D9DC1023161144670076D42C /* FileOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileOperation.m; sourceTree = "<group>"; };
@@ -42,6 +46,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
+				D95B1FFC16163179006A8377 /* Python.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,6 +77,7 @@
 				29B97324FDCFA39411CA2CEA /* AppKit.framework */,
 				13E42FB307B3F0F600E4EEF1 /* CoreData.framework */,
 				29B97325FDCFA39411CA2CEA /* Foundation.framework */,
+				D95B1FFB16163179006A8377 /* Python.framework */,
 			);
 			name = "Other Frameworks";
 			sourceTree = "<group>";
@@ -99,6 +105,7 @@
 		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
+				D95B2008161631E8006A8377 /* parser.py */,
 				D9DC105616114C7D0076D42C /* ccextractor */,
 				256AC3F00F4B6AF500CF3369 /* Subtitler_Prefix.pch */,
 				29B97316FDCFA39411CA2CEA /* main.m */,
@@ -208,6 +215,7 @@
 				1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */,
 				D9DC0FF1161139E90076D42C /* app.icns in Resources */,
 				D9DC105716114C7D0076D42C /* ccextractor in Resources */,
+				D95B2009161631E8006A8377 /* parser.py in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,7 +295,9 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PREBINDING = NO;
+				RUN_CLANG_STATIC_ANALYZER = YES;
 				SDKROOT = macosx10.6;
+				VERSIONING_SYSTEM = "";
 			};
 			name = Debug;
 		};

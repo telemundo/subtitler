@@ -4,6 +4,7 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "FileOperation.h"
 
 @interface AppController : NSObject <NSApplicationDelegate, NSTableViewDataSource> {
     NSWindow *       _window;
@@ -31,5 +32,6 @@
 - (void)application:(NSApplication *)sender openFiles:(NSArray *)files;
 - (void)processFiles;
 - (void)nextFile;
+- (void)export:(FileOperation *)entity;
 
 @end

@@ -4,6 +4,8 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import <Foundation/Foundation.h>
+#import <Python/Python.h>
 #import "AppController.h"
 #import "FileOperation.h";
 
@@ -31,7 +33,7 @@
     return self;
 }
 
-- (void) dealloc {
+- (void)dealloc {
     [_tableView release];
     [_fileManager release];
     [_fileQueue release];
@@ -58,6 +60,7 @@
         _fileTotal++;
     }
     [_tableView reloadData];
+    [self start:self];
 }
 
 - (BOOL)applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)sender {
@@ -66,7 +69,7 @@
 
 - (IBAction)start:(id)sender {
     if (!_isRunning) {
-        NSLog(@"Process file queue");
+        NSLog(@"Processing file queue");
         _isRunning = YES;
         [self processFiles];
     }
@@ -117,8 +120,10 @@
     if ((dataRead = [[entity output] availableData]) && [dataRead length]) {
         //NSString * textRead = [[NSString alloc] initWithData:dataRead encoding:NSUTF8StringEncoding];
         //NSLog(@"read %3ld: %@", (long)[textRead length], textRead);
+        // TODO: process script output
         [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(threadProgress) userInfo:nil repeats:NO];
     } else {
+        [self export:entity];
         [entity setStatus:@"Done"];
         [_tableView reloadData];
         [self nextFile];
@@ -146,9 +151,9 @@
             NSMutableArray * args = [[NSMutableArray new] autorelease];
             [args addObject:@"-out=srt"];           // Output SubRip files
             [args addObject:@"-o1"];                // Output custom Field 1 file
-            [args addObject:[NSString stringWithFormat:@"%@/cc1.srt", [entity outputDir]]];
+            [args addObject:[NSString stringWithFormat:@"%@/es.srt", [entity outputDir]]];
             [args addObject:@"-o2"];                // Output custom Field 2 file
-            [args addObject:[NSString stringWithFormat:@"%@/cc2.srt", [entity outputDir]]];
+            [args addObject:[NSString stringWithFormat:@"%@/en.srt", [entity outputDir]]];
             [args addObject:@"-utf8"];              // Encode subtitles in UTF-8
             [args addObject:@"-nofc"];              // Disable font color tags
             [args addObject:@"-noru"];              // Disable roll-up output
@@ -175,6 +180,20 @@
 - (void)nextFile {
     _filePos++;
     [self processFiles];
+}
+
+- (void)export:(FileOperation *)entity {
+    NSAutoreleasePool * pool = [[NSAutoreleasePool alloc] init];
+    NSString * path = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"parser.py"];
+    NSString * script = [NSString stringWithContentsOfFile:path	encoding:NSUTF8StringEncoding error:nil];
+    NSString * cc1Input = [NSString stringWithFormat:@"%@/es.srt", [entity outputDir]];
+    NSString * cc1Output = [NSString stringWithFormat:@"%@/es.xml", [entity outputDir]];
+    NSString * cc2Input = [NSString stringWithFormat:@"%@/en.srt", [entity outputDir]];
+    NSString * cc2Output = [NSString stringWithFormat:@"%@/en.xml", [entity outputDir]];
+    NSString * outputScript = [NSString stringWithFormat:@"%@\nparser = SubtitleParser()\nparser.parse('%@')\nparser.export('%@', 'es')\nunlink('%@')\nparser.parse('%@')\nparser.export('%@', 'en')\nunlink('%@')", script, cc1Input, cc1Output, cc1Input, cc2Input, cc2Output, cc2Input];
+    Py_Initialize();
+    PyRun_SimpleString([outputScript UTF8String]);
+    [pool drain];
 }
 
 @end
