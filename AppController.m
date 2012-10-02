@@ -187,10 +187,10 @@
     NSString * path = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"parser.py"];
     NSString * script = [NSString stringWithContentsOfFile:path	encoding:NSUTF8StringEncoding error:nil];
     NSString * cc1Input = [NSString stringWithFormat:@"%@/es.srt", [entity outputDir]];
-    NSString * cc1Output = [NSString stringWithFormat:@"%@/es.xml", [entity outputDir]];
+    NSString * cc1Output = [NSString stringWithFormat:@"%@/%@_es.xml", [entity outputDir], [entity filename]];
     NSString * cc2Input = [NSString stringWithFormat:@"%@/en.srt", [entity outputDir]];
-    NSString * cc2Output = [NSString stringWithFormat:@"%@/en.xml", [entity outputDir]];
-    NSString * outputScript = [NSString stringWithFormat:@"%@\nparser = SubtitleParser()\nparser.parse('%@')\nparser.export('%@', 'es')\nunlink('%@')\nparser.parse('%@')\nparser.export('%@', 'en')\nunlink('%@')", script, cc1Input, cc1Output, cc1Input, cc2Input, cc2Output, cc2Input];
+    NSString * cc2Output = [NSString stringWithFormat:@"%@/%@_en.xml", [entity outputDir], [entity filename]];
+    NSString * outputScript = [NSString stringWithFormat:@"%@\nparser = SubtitleParser()\nparser.parse('%@')\nparser.export('%@', 'es-us')\nunlink('%@')\nparser.parse('%@')\nparser.export('%@', 'en-us')\nunlink('%@')", script, cc1Input, cc1Output, cc1Input, cc2Input, cc2Output, cc2Input];
     Py_Initialize();
     PyRun_SimpleString([outputScript UTF8String]);
     [pool drain];

@@ -30,10 +30,10 @@ class SubtitleParser():
 
     def export(self, filename, language):
         fp = codecs.open(filename, 'w', 'utf-8')
-        fp.write(u'<?xml version="1.0" encoding="UTF-8"?>\n')
-        fp.write(u'<tt xml:lang="%s" xmlns="http://www.w3.org/ns/ttml">\n' % language)
+        fp.write(u'<?xml version="1.0" encoding="utf-8"?>\n')
+        fp.write(u'<tt xml:lang="%s" xmlns="http://www.w3.org/2006/10/ttaf1">\n' % language)
         fp.write(u'  <head>\n')
-        fp.write(u'    <metadata xmlns:ttm="http://www.w3.org/ns/ttml#metadata">\n')
+        fp.write(u'    <metadata xmlns:ttm="http://www.w3.org/2006/10/ttaf1#metadata">\n')
         fp.write(u'      <ttm:copyright>Telemundo (c) %s, all rights reserved.</ttm:copyright>\n' % date.today().year)
         fp.write(u'    </metadata>\n')
         fp.write(u'  </head>\n')
@@ -73,7 +73,7 @@ class CustomParser(HTMLParser):
         self.reset()
 
     def handle_data(self, data):
-        self.stack.append(data)
+        self.stack.append(saxutils.escape(data))
 
     def render_output(self):
         return unicode(u''.join(self.stack))
