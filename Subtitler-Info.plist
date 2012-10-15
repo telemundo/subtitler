@@ -38,12 +38,20 @@
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>0.1.2</string>
+	<string>7</string>
+	<key>CFBundleShortVersionString</key>
+	<string>0.2.0</string>
 	<key>LSMinimumSystemVersion</key>
 	<string>${MACOSX_DEPLOYMENT_TARGET}</string>
 	<key>NSMainNibFile</key>
 	<string>MainMenu</string>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
+	<key>SUFeedURL</key>
+	<string>https://origin-www.telemundoeventos.com/osx/appcast/?/check/subtitler</string>
+	<key>SUEnableSystemProfiling</key>
+	<true/>
+	<key>SUPublicDSAKeyFile</key>
+	<string>pub.key</string>
 </dict>
 </plist>
