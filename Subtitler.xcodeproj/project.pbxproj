@@ -42,7 +42,7 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 8D1107260486CEB800E47090 /* Subtitler */;
+			remoteGlobalIDString = 8D1107260486CEB800E47090;
 			remoteInfo = Subtitler;
 		};
 /* End PBXContainerItemProxy section */
@@ -74,13 +74,13 @@
 		8D1107310486CEB800E47090 /* Subtitler-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Subtitler-Info.plist"; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* Subtitler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Subtitler.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D95B1FFB16163179006A8377 /* Python.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Python.framework; path = System/Library/Frameworks/Python.framework; sourceTree = SDKROOT; };
-		D95B2008161631E8006A8377 /* parser.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = parser.py; sourceTree = "<group>"; };
-		D97A724C162BC17E0051F09C /* pub.key */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = pub.key; path = ../subtitler/pub.key; sourceTree = SOURCE_ROOT; };
+		D95B2008161631E8006A8377 /* parser.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; name = parser.py; path = assets/parser.py; sourceTree = "<group>"; };
+		D97A724C162BC17E0051F09C /* pub.key */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = pub.key; path = assets/pub.key; sourceTree = SOURCE_ROOT; };
 		D9AD587B161B8C60006E5DF6 /* Sparkle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
-		D9DC0FF0161139E90076D42C /* app.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = app.icns; sourceTree = "<group>"; };
+		D9DC0FF0161139E90076D42C /* app.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = app.icns; path = assets/app.icns; sourceTree = "<group>"; };
 		D9DC1022161144670076D42C /* FileOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileOperation.h; sourceTree = "<group>"; };
 		D9DC1023161144670076D42C /* FileOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileOperation.m; sourceTree = "<group>"; };
-		D9DC105616114C7D0076D42C /* ccextractor */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = ccextractor; sourceTree = SOURCE_ROOT; };
+		D9DC105616114C7D0076D42C /* ccextractor */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; name = ccextractor; path = assets/ccextractor; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
