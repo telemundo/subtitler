@@ -7,7 +7,7 @@
 #import <Foundation/Foundation.h>
 #import <Python/Python.h>
 #import "AppController.h"
-#import "FileOperation.h";
+#import "FileOperation.h"
 
 @implementation AppController
 
@@ -109,7 +109,7 @@
 }
 
 - (void)threadStart {
-	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+    NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
     [self performSelectorOnMainThread:@selector(threadProgress) withObject:nil waitUntilDone:NO];
     [pool release];
 }
@@ -134,7 +134,7 @@
     if (_filePos < _fileTotal) {
         FileOperation * entity = [_fileQueue objectAtIndex:_filePos];
         if (![entity error]) {
-            NSLog(@"Processing file %d of %d", _filePos+1, _fileTotal);
+            NSLog(@"Processing file %ld of %ld", _filePos+1, _fileTotal);
             [entity setStatus:@"Processing"];
             _ccextractor = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"ccextractor"];
             _cctask      = [[NSTask alloc] init];
@@ -168,7 +168,7 @@
             [_cctask launch];
             [_tableView reloadData];
         } else {
-            NSLog(@"Skipping file %d of %d", _filePos+1, _fileTotal);
+            NSLog(@"Skipping file %ld of %ld", _filePos+1, _fileTotal);
             [self nextFile];
         }
     } else {
@@ -185,7 +185,7 @@
 - (void)export:(FileOperation *)entity {
     NSAutoreleasePool * pool = [[NSAutoreleasePool alloc] init];
     NSString * path = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"parser.py"];
-    NSString * script = [NSString stringWithContentsOfFile:path	encoding:NSUTF8StringEncoding error:nil];
+    NSString * script = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
     NSString * cc1Input = [NSString stringWithFormat:@"%@/es.srt", [entity outputDir]];
     NSString * cc1Output = [NSString stringWithFormat:@"%@/%@_es.xml", [entity outputDir], [entity filename]];
     NSString * cc2Input = [NSString stringWithFormat:@"%@/en.srt", [entity outputDir]];

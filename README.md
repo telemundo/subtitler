@@ -4,8 +4,8 @@ This OS X application generates [TTML 1.0](http://www.w3.org/TR/ttaf1-dfxp/) fil
 
 ## Requirements
 
-- Mac OS X 10.6 (Snow Leopard)
-- Xcode 3.2
+- Mac OS X 10.7+
+- Xcode 5.0
 
 ## Submitting bugs and feature requests
 
